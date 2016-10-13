@@ -1,0 +1,130 @@
+!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>动画效果</title>
+    <style type="text/css">
+        ul li{
+            list-style: none;
+        }
+        ul li{
+            width: 200px;
+            height: 100px;
+            background: blue;
+            margin-bottom: 20px;
+            filter: alpha(opacity:30);
+            opacity: 0.3;
+            /*border: 3px solid;*/
+        }
+    </style>
+
+
+          
+
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+        window.onload=function () {
+            var aLi=document.getElementsByTagName('li');
+            for (var i = 0; i < aLi.length; i++) {
+           
+                //鼠标移入事件
+                aLi[i].onmouseover=function(){
+                    startMove(this,{width:400,height:400});
+                    // alphaMove(this,100);
+                };
+                //鼠标移出事件
+                aLi[i].onmouseout=function(){
+                    startMove(this,'width',200);
+                    // alphaMove(this,30);
+                }
+            }
+          }
+
+          //获取属性值
+        function getStyle (obj,attr) {
+             if (obj.currentStyle) {
+                return  obj.currentStyle[attr];//IE浏览器
+             } else {
+              return getComputedStyle(obj,false)[attr];// 火狐浏览器
+             }
+          }
+          
+
+          //速度动画
+        function startMove(obj,json,fn){
+            var flag=1;
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){ 
+                //循环json
+                for (var attr in json) {
+                //1.取得属性值
+                    var iCur = 0;
+                    if (attr == 'opacity ') {
+                         iCur =Math.round(parseFloat(getStyle(obj,attr))*100); 
+                    } else {
+                         iCur = parseInt(getStyle(obj,attr));
+                    } 
+                    
+                    //2.设置速度缓冲
+                    var speed = (json[attr]-iCur)/10;
+                    speed = speed>0?Math.ceil(speed):Math.floor(speed);
+                    
+                    //3.未到达目标值不停止
+                    if (iCur !=json[attr]) {
+                        flag=0;
+                    }
+                    if (iCur =='opacity') {
+                            obj.style.filter = 'alpha(opacity:'+(iCur+speed)+')';
+                            obj.style.opacity = (iCur+speed)/100;
+                    } else {
+                            obj.style[attr]= iCur + speed + 'px';
+                    }                                                   
+                }
+
+                //检测停止计时器
+                if(flag){
+                    clearInterval(obj.timer);
+                    if(fn){
+                        fn();
+                    }
+                }
+            },30)
+        }
+            
+
+            //透明度动画         
+        function alphaMove(obj,attr) {
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function () {
+                var speed =0;
+                if (obj.alpha>json[attr]) {
+                    speed= -10;
+                }
+                else {
+                    speed = 10;
+                }
+                      
+                if (obj.alpha==json[attr]) {
+                    clearInterval(obj.timer);       
+                } 
+                else {
+                obj.alpha +=speed;
+                obj.style.filter = '(opacity:'+obj.alpha+')';
+                obj.style.opacity = obj.alpha/100;
+                }
+            }, 30);
+                
+        }
+          
+
+    </script>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        
+    </ul>
+</body>
+</html>

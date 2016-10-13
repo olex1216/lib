@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无限循环数组</title>
+	 <script type="text/javascript" src="../js/lib/jquery.js"></script>
+</head>
+<body>
+<div class="who">
+	
+</div>
+
+	<script>
+	var words = ["you.", "your family.", "your community."];
+	var i=0
+
+	var textChange = function() {
+    $(".who").fadeOut(function(){
+          //循环数组
+	      $(".who").text(words[i=(i+1)%words.length]);
+	      $(".who").fadeIn();
+	    });
+      }
+
+      $(document).ready(function(){
+        setInterval(function () {
+          textChange();
+        }, 2250);
+      });
+	</script>
+</body>
+</html>

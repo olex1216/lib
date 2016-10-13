@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>水平伸展菜单</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;font-size: 14px;}
+		ul{list-style: none;height: 50px;padding-left: 30px;border-bottom: 5px solid #f60;}
+		li{float: left;margin-top: 20px;}
+		a{text-decoration: none;display: block;width: 120px;height: 30px;line-height: 30px;margin-bottom: 2px;background-color: #ccc;font-family: "微软雅黑";text-align: center; }
+		a:hover{background-color: #f60;color: #fff;height: 40px;margin-top: -10px;line-height: 40px;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function () {
+			var aA=document.getElementsByTagName('a');
+			for (var i = 0; i < aA.length; i++) {
+				
+				//水平伸展列表
+				aA[i].onmouseover=function(){
+					var This=this;
+					clearInterval(timer);
+					timer=setInterval(function(){
+					This.style.width=This.offsetWidth+8+"px";
+					if (This.offsetWidth>=160) {clearInterval(timer);} ;	
+					},50)
+				}
+
+				aA[i].onmouseout=function(){
+					var this=this;
+					clearInterval(timer);
+					timer=setInterval(function(){
+					this.style.width=this.offsetWidth+8+"px";
+					if (this.offsetWidth<=120) {
+						this.style.width="120px";
+						clearInterval(timer);
+						}
+					},50)
+				}
+
+
+			}
+		}
+	</script>
+		
+</head>
+
+
+<body>
+<ul>
+	<li><a class="on" href="#`">首页</a></li>
+	<li><a href="#`">新闻快讯</a></li>
+	<li><a href="#`">产品展示</a></li>
+	<li><a href="#`">售后服务</a></li>
+	<li><a href="#`">联系我们</a></li>
+</ul>
+</body>
+
+
+</html>
