@@ -1,0 +1,61 @@
+﻿关于git的使用，可以先阅览下该网站
+http://rogerdudler.github.io/git-guide/index.zh.html
+简单的流程：
+1.克隆远程代码到本地(通常切换到develop分支)
+2.创建忽略文件.gitignore
+3.更新本地的代码最新(git pull)
+4.根据需求创建本地分支(通常以最新的develop分支为基准)
+5.在新创建的分支上完成开发
+6.提交开发的功能(git add * + git commit -m '注释' + git push origin 所在的开发分支名称)
+7.切换到develop分支，并更新develop分支为最新
+8.合并已完成开发的分支过来(git merge 分支名称)
+9.如有冲突，解决冲突，并commit
+10.推送develop分支的最新变更至远端(git push origin develop)
+
+列子：
+需求：增加一个帮助页面
+开发：
+1.进入本人的虚拟机，并到项目目录下。
+2.切换至develop分支，并更新。
+3.新建分支help
+4.完成开发
+5.提交本地更改，并推送至远端。
+6.切换值develop分支，并更新。
+7.在develop分支下，合并help分支。
+8.解决冲突并提交。
+9.将develop分支推送至远端。
+
+命令流程示例：
+cd /yourPatn/jxc_dev  切换到项目
+git status	      查看当前项目状态
+git checkout develop  切换到develop分支
+git pull	      把远端的develop分支拉下来
+git checkout -b help  创建help分支
+#开发………………
+git add *
+git commit -m 'finish help'
+git push origin help
+git checkout develop
+git pull
+git merge help
+git pull
+git push origin develop
+
+重要提示：
+由于目前发版更新没有使用git的方式
+需要将自己开发完成的变更文件路径记录下来，并且静态文件(不包含html文件)单独作说明(因为这些文件会上传到云盘)，路径以jxc开头
+
+需更新文件：
+jxc/highgame/_app/controller/security.php
+jxc/highgame/_app/views/jxc/chongzhi.html
+jxc/highgame/css/jxc/jx_lobby.css
+jxc/highgame/images/jxc/depostit.png
+
+需上传至云盘：
+jxc/highgame/css/jxc/jx_lobby.css
+jxc/highgame/images/jxc/depostit.png
+
+git update-index --skip-worktree	#强制忽略
+git update-index --no-skip-worktree	#取消强制忽略
+git update-index --assume-unchanged	#强制忽略
+git update-index --no-assume-unchanged	#取消强制忽略
