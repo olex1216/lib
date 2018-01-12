@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* 重置样式 */
+html,body { margin:0; padding:0; font-size:12px; font-family: 'microsoft yahei';}
+h1,h2,h3,h4,h5,h6,ul,dl,dt,dd,ol,p,input { margin:0; padding:0; }
+img { border:0;}
+li,em { list-style:none; font-style:normal;}
+a { text-decoration:none;}
+a:hover { text-decoration:none;}
+*:focus {outline: none;}
+.left{ float: left; display:inline; }
+.right{ float: right; display:inline; }
+.re { position:relative; }
+.ab { position:absolute; }
+.clear{ clear: both; }
+.hidden { overflow:hidden; }
+
+.form-div{ display: none;}
+.formTable td img{ vertical-align: middle;}
+.mask_list{ width: 100%; height: 100%; background:url("/images/tmbg.png") repeat; position: fixed; left: 0px; top: 0px; z-index: 550; display: none;}
+.mask_list div,#loading_msg{ background: url("/images/loading-large.gif") no-repeat center; font-weight: normal; width: 160px; font-size: 16px;text-shadow:1px 0px 1px #000; height: 24px; position: absolute; z-index: 500; left: 50%; top: 20%; margin-left: -60px;margin-top: -60px; color: white; text-align: center; padding-top: 80px;}
+#loading_msg{ margin-left: 80px;}
+
+/*页面容器*/
+.warp { width: 980px; margin: 0px auto; }
+
+input[name='ptype'],input[name='type'],input[name='ischild']{ display:none;}
+#ptype_personal,#ptype_team{ display: none;}
+
+textarea {resize: vertical;}
+
+.to_web_fe{position: absolute; top: -5px; left: -180px; width: 120px; padding: 5px 15px; box-shadow:0 0 10px 0 #fd09a4; border-radius: 0 0 15px 15px; background: -webkit-linear-gradient(left, #fd08ab 0%, #ff1411 100%); background: -moz-linear-gradient(left, #fd08ab 0%, #ff1411 100%); background: -ms-linear-gradient(left, #fd08ab 0%, #ff1411 100%); z-index: 1111}
+.to_web_fe:hover{ background: -webkit-linear-gradient(left, #ef04a0 0%, #ef110e 100%); background: -moz-linear-gradient(left, #ef04a0 0%, #ef110e 100%); background: -ms-linear-gradient(left, #ef04a0 0%, #ef110e 100%);}
+
+/* 20160921投注内容 */
+.sc_tznr_thead table,.sc_tznr_tbody table { width: 100%; font-size: 14px; color: #666;}
+.sc_tznr_thead { padding:10px 0 15px;}
+.sc_tznr_tbody { padding:5px 25px;}
+.sc_tznr_tbody td { padding: 8px 0;}
+.sc_tznr_tbody .color_purple { padding-left: 8px;}
+.btn-back,.btn-cedan { padding:0 35px 0 45px; font-size: 14px; height: 31px; margin-left: 8px; line-height: 31px; text-align: center; font-family: "microsoft Yahei";  border-radius: 6px; border: 0; cursor: pointer;}
+#nocode { display: inline-block; font-size: 16px; color: #8c5a8e; font-weight: bold; letter-spacing: 1px;  width: 280px;  word-wrap: break-word;}
+.lb_zhnr_nr { margin-top:1px; padding:20px; overflow:hidden;}
+.lb_zhnr_nr label { float:left; display:inline-block; font-size:16px; font-weight:bold;}
+.lb_zhnr_nr .lb_zhnr_number { width:85%; float:left; display:inline-block; padding-left:20px; margin-left:12px; font-size:15px; line-height:22px; font-weight:bold;}
+.lb_zhnr_qishu { padding:30px 0 20px 0; overflow:hidden;}
+.lb_zhnr_qishu table { width:50%; float:right;}
+.lb_zhnr_qishu td { color:#888; text-align:right;}
+.lb_zhnr_qishu td span { padding: 0 5px 0 0;}
+.stop_zh { text-align:center; padding:20px 0;}
+.stop_zh .button_stop_zh { background:#ff632c url(/images/nsc/icon_stop.png) no-repeat 45px center; padding:0 50px 0 72px; height:36px; line-height:36px; font-size:16px; font-weight:bold; border:0; color:#fff; border-radius:30px; text-align:left; cursor:pointer; font-family: "microsoft Yahei"; display:inline-block;}
+.tb_bg { background:url("/images/nsc/sc_tznr-bg-xian.png") repeat-y left top; padding-left:30px;}
+
+.bonus_content { background: url("/images/nsc/sc_tznr-bg-xian.png") repeat-y left top; padding: 0 0 10px 28px;}
+.bonus_content .bonus_tit {}
+.bonus_content .bonus_con { margin: 0 0 5px 0; font-size: 24px; text-align: right; color: #fc7c23; font-weight: bold;}
+.bonus_content .bonus_state {text-align: right;}
+.bonus_content .font_no-win { color: #a6a6a6;}
+.bonus_content .font_no-open { color: green;}
+.bonus_content .font_no-pj { color: #a6a6a6;}
+.bonus_content .font-yes-pj { color:#ff632c }
+
+.sc_tznr-icon1 { background:url("/images/nsc/sc_tznr-icon.png") no-repeat; width: 17px; height: 17px; display: inline-block; margin: 0 5px 0 0; vertical-align: -3px;}
+.sc_tznr-icon2 { background:url("/images/nsc/sc_tznr-icon.png") no-repeat -59px 0; width: 19px; height: 19px; display: inline-block; margin: 0 5px 0 0; vertical-align: -3px;}
+.sc_tznr-icon3 { background:url("/images/nsc/sc_tznr-icon.png") no-repeat -27px 0; width: 22px; height: 20px; display: inline-block; margin: 0 5px 0 0; vertical-align: -3px;}
+
+.sc_tznr_content { background:url("/images/nsc/sc_tznr-bg-sj.png") repeat-x left top; padding: 15px 0 0;}
+.sc_tznr_content table { width: 98%; margin: 0 auto; font-size: 14px; color: #666;}
+.sc_tznr_content td { padding: 8px 0;}
+.sc_tznr_content td b { font-size: 16px;}
+.tznr_input-textarea { position: relative; border: 1px solid #f7e8f8; color: #999; border-radius:6px; font-size: 16px; letter-spacing: 0.5px; word-break:break-all;white-space:normal; padding: 10px 0 10px 15px; margin:0 auto; text-align: left; line-height: 30px; word-wrap:break-word;}
+.tznr_input-icon { position: absolute; top: -12px; left: 50px; background:url("/images/nsc/sc_tznr-icon.png") no-repeat -135px 0; width: 15px; height: 12px; display: inline-block;}
+/*颜色区域*/
+.sc_tznr_tbody { background:#f7e8f8; border-top: 3px solid #cfb7d1;}
+.lb_zhnr_nr { background:#f7e8f8;}
+.lb_zhnr_nr label { color:#8e6e91;}
+.lb_zhnr_nr .lb_zhnr_number { border-left:1px solid #cfb7d1; color:#8e6e91;}
+.color_purple { color: #8c5a8e;}
+.color_golden { color: #fc7c23;}
+.btn-back { background: #f7e8f8 url(/images/nsc/icon_back.png) no-repeat 18px center; color: #8c5a8e;}
+.btn-cedan { background: #f7e8f8; color: #8c5a8e; padding:0 35px;}
+
+
+/*充值修改优化2.5*/
+/*在线充值*/
+.maintain_ico { background:url(/images/nsc/skin/blue_skin/list/bank/sc_recharge_maintain_ico.png) no-repeat; width:202px; height:70px; display:block; position:absolute; top:-1px; left:-1px; cursor:default;}
+.step { padding:0 20px;}
+.step .item { overflow: hidden; zoom:1; padding: 15px 0; border-bottom: 1px dashed #ddd;}
+.step .item .item_l { width:150px; float: left; font-size: 16px; line-height: 36px; color: #333; padding-right: 10px; text-align:right;}
+.step .item .item_r { float: left;}
+.step .item .item_r select {}
+.step .item .money_hanggao { line-height: 52px!important;}
+.step .item .tips { color: #888; padding: 10px 0 0 0; font-size: 14px;}
+.step .item .tips b { color: #fc7c23;}
+.step .item .tips2 { display: inline-block; color: red; margin-left: 25px; font-size: 14px;}
+.step .item .tips2 i { margin-right: 5px; vertical-align: -2px; background: url(/images/nsc/icon_red-warning.png) no-repeat; background-size:100%; width: 15px; height: 15px; display: inline-block;}
+.step .item .yuan { font-size: 28px; color:#333; vertical-align: -3px;}
+.step .item #msg_money { color:red; padding-left: 38px; font-size: 14px;}
+.step .item .money { font-size: 20px; color: #fc7c23; line-height: 36px;}
+.step .z_font1 { font-size: 20px; color: #888; line-height: 36px;}
+
+
+#choosedBank span { display:inline-block;}
+#choosedBank .icon { margin-left:12px; width:25px; height:25px; }
+#choosedBank .bankName { font-size:18px; margin-top:6px; }
+#choosedBank .bankName img { vertical-align:-6px; margin-right: 5px;}
+#choosedBank .up { width:11px; height:6px; background:url(/images/nsc/skin/blue_skin/list/bank/up.gif) no-repeat; margin-left:10px; margin-top:35px; }
+#choosedBank .down { width:11px; height:6px; background:url(/images/nsc/skin/blue_skin/list/bank/down.gif) no-repeat; margin-left:10px; margin-top:35px; }
+.zhi .icon { background:url(/images/nsc/skin/blue_skin/list/bank/zhi25.png) no-repeat; }
+.gong .icon { background:url(/images/nsc/skin/blue_skin/list/bank/gong25.png) no-repeat; }
+.jian .icon { background:url(/images/nsc/skin/blue_skin/list/bank/jian25.png) no-repeat; }
+.zhao .icon { background:url(/images/nsc/skin/blue_skin/list/bank/zhao25.png) no-repeat; }
+.nong .icon { background:url(/images/nsc/skin/blue_skin/list/bank/nong25.png) no-repeat; }
+.bankBox b { font-size:22px; color:#333; font-weight:normal; margin-left:10px;  }
+.bankBox p { font-size:12px; color:#888; }
+.bankBox span { display:none; }
+.zhiBox { background:url(/images/nsc/skin/blue_skin/list/bank/zhi.png) no-repeat 25px 10px; }
+.gongBox { background:url(/images/nsc/skin/blue_skin/list/bank/gong.png) no-repeat 25px 10px; }
+.nongBox { background:url(/images/nsc/skin/blue_skin/list/bank/nong.png) no-repeat 25px 10px; }
+.zhaoBox { background:url(/images/nsc/skin/blue_skin/list/bank/zhao.png) no-repeat 25px 10px; }
+.jianBox { background:url(/images/nsc/skin/blue_skin/list/bank/jian.png) no-repeat 25px 10px; }
+#banklist .hover { border:1px solid #fc7c23; }
+#banklist .hover span { position:absolute; right:0px; bottom:0px; background:url(/images/nsc/skin/blue_skin/list/bank/choose.png) no-repeat; width:21px; height:19px; display:block; }
+.cz_btn_box { text-align:center; padding: 25px 0 50px 0;}
+.cz_btn_box p { padding: 0 0 15px 0; color: #888;}
+.cz_btn_box a.next { font-weight:bold; font-family: Microsoft Yahei; background:url(/images/nsc/skin/blue_skin/list/saveBtn2.png) no-repeat; width:201px; height:56px; font-size: 22px; line-height: 54px; color: #fff; display:inline-block; }
+.cz_btn_box a.next:hover { background:url(/images/nsc/skin/blue_skin/list/saveBtn2.png) no-repeat 0 -66px;}
+#bind { font-family: Microsoft Yahei; background:#fc7c23; cursor: pointer; border:0; padding:0 15px; height:32px; font-size: 14px; line-height: 32px; color: #fff; display:inline-block; margin: 0 15px; border-radius:3px;}
+
+.jixuan{padding-left:10px;width:100px;}
+.jixuan .jx_button_90x26{width:90px; height: 26px; margin-bottom:5px; border:1px solid #D8D8D8; background: #fff;border-radius:3px}
+
+#banklist { padding: 0 0 0 40px; width:auto;}
+.bankBox { width:130px; border:1px solid #c9c9c9; padding:5px 10px; background:#fff; float:left; display:inline; margin-right:20px; margin-bottom:10px; position:relative; cursor:pointer; overflow:hidden; }
+.bankBox img { vertical-align:-10px; width: 30px; height: 30px;}
+.step .item .cz_top_next { position: absolute; top: 20px; right: 40px; font-size: 14px; color: #666; border-bottom: 1px solid #bbb; display: inline-block; padding-bottom: 2px;}
+.step .item .cz_top_next:hover { color: #ff632c; border-bottom: 1px solid #ff632c;}
+.step .item .cz_input1 { font-family: Microsoft Yahei; text-align: center; height: 45px; line-height: 45px; font-size: 20px; color: #333; border: 1px solid #bbb; padding: 0 8px; color: #333; border-radius:6px; margin-right:8px;}
